@@ -24,7 +24,7 @@ jobs:
         uses: ko-build/setup-ko@v0.8
         with:
             version: v0.19.1
-
-
       - name: Build and push
         run: ko build . --tags=${{ github.ref_name }}
+        env:
+          KO_DOCKER_REPO: ghcr.io/samuel-jinadu/log-output
