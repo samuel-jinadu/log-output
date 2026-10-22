@@ -25,6 +25,6 @@ jobs:
         with:
             version: v0.19.1
       - name: Build and push
-        run: ko build . --tags=${{ github.ref_name }}
+        run: ko build . --bare --sbom=none --tags=${{ github.ref_name }}
         env:
           KO_DOCKER_REPO: ghcr.io/samuel-jinadu/log-output
